@@ -1,4 +1,3 @@
-import { getGameWidth, getGameHeight } from '../helpers';
 import { Player } from '../entities/player';
 
 const sceneConfig: Phaser.Types.Scenes.SettingsConfig = {
@@ -10,6 +9,8 @@ const sceneConfig: Phaser.Types.Scenes.SettingsConfig = {
 export class GameScene extends Phaser.Scene {
   private map: Phaser.Tilemaps.Tilemap;
   private tileset: Phaser.Tilemaps.Tileset;
+
+  private player: Player;
 
   private backgroundLayer: Phaser.Tilemaps.StaticTilemapLayer;
   private foregroundLayer: Phaser.Tilemaps.StaticTilemapLayer;
@@ -25,10 +26,15 @@ export class GameScene extends Phaser.Scene {
     this.backgroundLayer = this.map.createStaticLayer('backgroundLayer', this.tileset, 0, 0);
     this.foregroundLayer = this.map.createStaticLayer('foregroundLayer', this.tileset, 0, 0);
 
-    this.foregroundLayer.setCollisionByProperty({ collide: true });
+    const objects = this.map.getObjectLayer('objects').objects;
+    objects.forEach((object: Phaser.Types.Tilemaps.TiledObject) => {
+      if (object.type === 'player') {
+        this.player = new Player(this, object.x, object.y);
+      }
+    });
 
-    // Add a player sprite that can be moved around. Place him in the middle of the screen.
-    new Player(this, getGameWidth(this) / 2, getGameHeight(this) / 2);
+    this.foregroundLayer.setCollisionByProperty({ collide: true });
+    this.physics.add.collider(this.player, this.foregroundLayer);
   }
 
   public create() {

@@ -3,8 +3,7 @@
     {
      "export":
         {
-         "format":"json",
-         "target":"map1"
+         "format":"json"
         }
     },
  "height":40,
@@ -44,11 +43,11 @@
                  "id":1,
                  "name":"player",
                  "rotation":0,
-                 "type":"",
+                 "type":"player",
                  "visible":true,
                  "width":16,
                  "x":112,
-                 "y":320
+                 "y":272
                 }],
          "opacity":1,
          "type":"objectgroup",
