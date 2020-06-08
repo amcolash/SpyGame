@@ -1,0 +1,31 @@
+{
+  "name": "spygame",
+  "version": "1.0.0",
+  "description": "Tinkering around with phaser and maybe making a game!",
+  "scripts": {
+    "build": "webpack",
+    "dev": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amcolash/SpyGame.git"
+  },
+  "author": "Andrew McOlash",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/amcolash/SpyGame/issues"
+  },
+  "homepage": "https://github.com/amcolash/SpyGame#readme",
+  "dependencies": {
+    "phaser": "^3.23.0"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^6.0.2",
+    "prettier": "^2.0.5",
+    "ts-loader": "^7.0.5",
+    "typescript": "^3.9.5",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
