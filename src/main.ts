@@ -1,6 +1,10 @@
 import * as Phaser from 'phaser';
 import Scenes from './scenes';
 
+// Allow a singular tileset to be used for all tilemaps
+import registerTiledJSONExternalLoader from 'phaser-tiled-json-external-loader';
+registerTiledJSONExternalLoader(Phaser);
+
 const gameConfig: Phaser.Types.Core.GameConfig = {
   title: 'Sample',
 

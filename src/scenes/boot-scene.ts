@@ -22,7 +22,13 @@ export class BootScene extends Phaser.Scene {
     const progressBarWidth = 400;
 
     const progressBarContainer = this.add.rectangle(halfWidth, halfHeight, progressBarWidth, progressBarHeight, 0x000000);
-    const progressBar = this.add.rectangle(halfWidth + 20 - progressBarContainer.width * 0.5, halfHeight, 10, progressBarHeight - 20, 0x888888);
+    const progressBar = this.add.rectangle(
+      halfWidth + 20 - progressBarContainer.width * 0.5,
+      halfHeight,
+      10,
+      progressBarHeight - 20,
+      0x888888
+    );
 
     const loadingText = this.add.text(halfWidth - 75, halfHeight - 100, 'Loading...').setFontSize(24);
     const percentText = this.add.text(halfWidth - 25, halfHeight, '0%').setFontSize(24);
@@ -61,7 +67,11 @@ export class BootScene extends Phaser.Scene {
     // Load sample assets
 
     // Source: Open Game Art
-    this.load.image('man', 'assets/character.png');
-  }
+    // this.load.image('man', 'assets/character.png');
 
+    this.load.pack('preload', 'assets/pack.json');
+
+    // Tiled maps are special
+    (this.load as any).tilemapTiledJSONExternal('level1', 'assets/tiles/level1.json');
+  }
 }

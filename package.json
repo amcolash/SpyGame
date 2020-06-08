@@ -17,7 +17,8 @@
   },
   "homepage": "https://github.com/amcolash/SpyGame#readme",
   "dependencies": {
-    "phaser": "^3.23.0"
+    "phaser": "^3.23.0",
+    "phaser-tiled-json-external-loader": "^0.1.0"
   },
   "devDependencies": {
     "copy-webpack-plugin": "^6.0.2",

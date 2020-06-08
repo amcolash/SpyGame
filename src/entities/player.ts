@@ -6,7 +6,7 @@ export class Player extends Phaser.GameObjects.Image {
   private cursorKeys: Phaser.Types.Input.Keyboard.CursorKeys;
 
   constructor(scene: Phaser.Scene, x: number, y: number) {
-    super(scene, x, y, 'man');
+    super(scene, x, y, 'player');
 
     // Add a player sprite that can be moved around. Place him in the middle of the screen.
     // this.image = this.physics.add.sprite(getGameWidth(this) / 2, getGameHeight(this) / 2, 'man');
