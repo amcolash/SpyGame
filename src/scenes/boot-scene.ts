@@ -52,7 +52,10 @@ export class BootScene extends Phaser.Scene {
       progressBar.destroy();
       progressBarContainer.destroy();
 
-      this.scene.start('MainMenu');
+      // In dev, just boot to game w/o menu
+      this.scene.start('Game');
+
+      // this.scene.start('MainMenu');
     });
 
     this.loadAssets();
