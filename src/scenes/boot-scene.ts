@@ -1,4 +1,4 @@
-import { getGameWidth, getGameHeight } from '../helpers';
+import { getGameWidth, getGameHeight, DEBUG } from '../helpers';
 
 const sceneConfig: Phaser.Types.Scenes.SettingsConfig = {
   active: false,
@@ -52,10 +52,12 @@ export class BootScene extends Phaser.Scene {
       progressBar.destroy();
       progressBarContainer.destroy();
 
-      // In dev, just boot to game w/o menu
-      this.scene.start('Game');
-
-      // this.scene.start('MainMenu');
+      if (DEBUG) {
+        // In dev, just boot to game w/o menu
+        this.scene.start('Game');
+      } else {
+        this.scene.start('MainMenu');
+      }
     });
 
     this.loadAssets();

@@ -1,5 +1,6 @@
 import * as Phaser from 'phaser';
 import Scenes from './scenes';
+import { DEBUG_GRAPHICS } from './helpers';
 
 // Allow a singular tileset to be used for all tilemaps
 import registerTiledJSONExternalLoader from 'phaser-tiled-json-external-loader';
@@ -20,7 +21,7 @@ const gameConfig: Phaser.Types.Core.GameConfig = {
   physics: {
     default: 'arcade',
     arcade: {
-      debug: true,
+      debug: DEBUG_GRAPHICS,
     },
   },
 
