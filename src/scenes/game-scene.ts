@@ -44,6 +44,12 @@ export class GameScene extends Phaser.Scene {
     const objects = this.map.getObjectLayer('objects').objects;
     objects.forEach((object: Phaser.Types.Tilemaps.TiledObject) => {
       if (object.type === 'player') {
+        // Make new player, only if one does not exist
+        if (this.player) {
+          console.error('Can only make one player!');
+          return;
+        }
+
         this.player = new Player(this, object.x, object.y);
       }
     });

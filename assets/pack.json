@@ -7,9 +7,13 @@
         "url": "assets/tiles/tiles.png"
       },
       {
-        "type": "image",
+        "type": "spritesheet",
         "key": "player",
-        "url": "assets/sprites/player.png"
+        "url": "assets/sprites/player.png",
+        "frameConfig": {
+          "frameWidth": 16,
+          "frameHeight": 16
+        }
       }
     ]
   }

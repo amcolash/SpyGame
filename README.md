@@ -9,3 +9,4 @@ Baseed off of [this tutorial](https://spin.atomicobject.com/2019/07/13/phaser-3-
 Most assets used were from [Open Game Art](opengameart.org).
 
 - https://opengameart.org/content/futuristic-doctors-office
+- https://opengameart.org/content/tiny-characters-set
